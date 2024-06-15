@@ -1,0 +1,19 @@
+--- lpairs2-2.3/Makefile.am.orig	2023-06-10 10:09:19.000000000 +0200
++++ lpairs2-2.3/Makefile.am	2024-06-15 21:36:19.952976105 +0200
+@@ -6,14 +6,14 @@ EXTRA_DIST = gettext.h config.rpath \
+ 
+ desktopdir = $(datadir)/applications
+ desktop_DATA = lpairs2.desktop
+-icondir = $(datadir)/icons
++icondir = $(datadir)/pixmaps
+ icon_DATA = lpairs2.png
+ 
+ # We can't use static desktop file because of icon location. Is this 
+ # the right way to handle it? At least it works... as long as $datadir
+ # does not contain plus signs. :-)
+ lpairs2.desktop:
+-	@sed -e "s+Icon=+Icon=$(datadir)/icons/lpairs2.png+" \
++	@sed -e "s+Icon=+Icon=$(icondir)/lpairs2.png+" \
+ 	< lpairs2.desktop.in > lpairs2.desktop
+ 
+ ACLOCAL_AMFLAGS = -I m4
